@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
     
     <!-- Local SEO Schema -->
     <script type="application/ld+json">
@@ -34,17 +34,17 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="/" class="logo">LI <span>Mathematics</span></a>
+            <a href="{{ .Site.BaseURL }}" class="logo">LI <span>Mathematics</span></a>
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
             <div class="nav-links" id="nav-links">
-                <a href="/#subjects">Subjects</a>
-                <a href="/#testimonials">Testimonials</a>
-                <a href="/post/">Blog</a>
-                <a href="/#contact" class="btn-primary-sm">Contact</a>
+                <a href="{{ .Site.BaseURL }}#subjects">Subjects</a>
+                <a href="{{ .Site.BaseURL }}#testimonials">Testimonials</a>
+                <a href="{{ "post/" | absURL }}">Blog</a>
+                <a href="{{ .Site.BaseURL }}#contact" class="btn-primary-sm">Contact</a>
             </div>
         </div>
     </nav>
