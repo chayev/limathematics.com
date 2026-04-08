@@ -1,0 +1,55 @@
+baseURL = 'https://www.limathematics.com/'
+languageCode = 'en-us'
+title = 'LI Mathematics - Private Tutoring for High School Mathematics in Holtsville, NY'
+
+[params]
+  # Hero Section
+  hero_title_primary = "LI "
+  hero_title_accent = "MATHEMATICS"
+  hero_subtitle = "Private tutoring for High School Mathematics."
+  hero_features = ["In-Person & Zoom", "Unparalleled Availability", "Deep 1-on-1 Engagement"]
+  hero_description = "Experience greater engagement than any classroom offers with expert guidance from Mykola."
+  hero_card_title = "Set Your Student Up For Success!"
+  hero_card_desc = "We offer a complimentary initial lesson to assess needs, analyze strengths, and build a roadmap to success."
+  hero_image = "https://static.wixstatic.com/media/3b73ea_0746cd61f8e24fd0b3ae4040369f3f71~mv2_d_2487_1864_s_2.jpg/v1/fill/w_1880,h_880,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_2675_edited.jpg"
+
+  # Subjects Section
+  subjects_title_primary = "SUBJECT "
+  subjects_title_accent = "SPECIALTIES"
+  subjects_subtitle = "Highly specialized tutoring in high school mathematics only!"
+  subjects_desc = "Every student deserves an unwavering commitment to guidance that's focused exclusively on their specific needs. That's why I chose to master a handful of subjects rather than being average in many. Because of this narrow focus, you can rest assured that every topic will be covered in the most detailed and understandable way."
+
+  [[params.subjects]]
+    icon = "x²"
+    name = "ALGEBRA"
+    desc = "This subject spans several topics and requires utmost mastery for continued success. From learning variables and equations to graphing and forming formulas, this area is as important to math as a charger is to your smartphone."
+
+  [[params.subjects]]
+    icon = "△"
+    name = "GEOMETRY"
+    desc = "During this phase of mathematics we are introduced to geometric shapes and properties. Important for applications in engineering and architecture. Out of all math subjects, geometry requires significant visual and spacial orientation."
+
+  [[params.subjects]]
+    icon = "sin(θ)"
+    name = "TRIGONOMETRY"
+    desc = "One of the more difficult subjects brings the study of complex functions and relations. Memorizing and identifying these functions is crucial to success. Application to real world scenarios are most evident in this topic."
+
+  # Testimonials Section
+  testimonials_title = "TESTIMONIALS"
+
+  [[params.testimonials]]
+    text = "Mykola has been my daughter's math tutor for more than 4 years now. He is an outstanding tutor and is an all around great person. He is intelligent, professional and considerate. He has been a tremendous help to my daughter. She continues to get above average grades in math even with the new rigorous and intense common core curriculum required by New York State. I have and will continue to recommend him to anyone seeking a competent, reliable and hard working tutor."
+    author = "Monika M."
+
+  # Contact Section
+  contact_title_primary = "Ready for "
+  contact_title_accent = "Success?"
+  contact_desc = "Everyone's needs are different. That's why I offer a complimentary initial lesson to assess the needs of the student, analyze their strengths and weaknesses, and arm them with a roadmap to success. I will not shy away from letting you know whether I can effectively help."
+  
+  [params.contact_info]
+    address = "133 Washington Ave, Holtsville, NY 11742"
+    email = "mykovasyl@gmail.com"
+    phone = "(631) 617-8298"
+  
+  # Formspree endpoint config
+  formspree_endpoint = "https://formspree.io/f/mykovasyl"

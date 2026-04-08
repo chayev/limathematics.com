@@ -1,0 +1,90 @@
+{{ define "main" }}
+<section class="hero">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <h1 class="hero-title">{{ .Site.Params.hero_title_primary }}<span>{{ .Site.Params.hero_title_accent }}</span></h1>
+            <p class="hero-subtitle">{{ .Site.Params.hero_subtitle }}</p>
+            <div class="hero-features">
+                {{ range .Site.Params.hero_features }}
+                <div class="feature-badge">{{ . }}</div>
+                {{ end }}
+            </div>
+            <p class="hero-description">{{ .Site.Params.hero_description }}</p>
+            <a href="#contact" class="btn-primary">Inquire Today</a>
+        </div>
+        <div class="hero-visual" style="position: relative;">
+            {{ if .Site.Params.hero_image }}
+            <img src="{{ .Site.Params.hero_image }}" alt="Tutoring Session" style="width: 100%; border-radius: 16px; object-fit: cover; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);">
+            {{ end }}
+            <div class="glass-card visual-card" style="position: absolute; bottom: -20px; left: -20px; max-width: 80%;">
+                <h3>{{ .Site.Params.hero_card_title }}</h3>
+                <p>{{ .Site.Params.hero_card_desc }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="subjects" class="subjects-section">
+    <div class="container">
+        <h2 class="section-title">{{ .Site.Params.subjects_title_primary }}<span>{{ .Site.Params.subjects_title_accent }}</span></h2>
+        <p class="section-subtitle">{{ .Site.Params.subjects_subtitle }}</p>
+        <p class="section-desc">{{ .Site.Params.subjects_desc }}</p>
+        
+        <div class="subject-grid">
+            {{ range .Site.Params.subjects }}
+            <div class="glass-card subject-card">
+                <div class="card-icon">{{ .icon }}</div>
+                <h3>{{ .name }}</h3>
+                <p>{{ .desc }}</p>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<section id="testimonials" class="testimonials-section">
+    <div class="container">
+        <h2 class="section-title"><span>{{ .Site.Params.testimonials_title }}</span></h2>
+        
+        {{ range .Site.Params.testimonials }}
+        <div class="testimonial-card glass-card" style="margin-bottom: 2rem;">
+            <p class="testimonial-text">"{{ .text }}"</p>
+            <p class="testimonial-author">- {{ .author }}</p>
+        </div>
+        {{ end }}
+    </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <div class="container contact-container">
+        <div class="contact-text">
+            <h2 class="section-title">{{ .Site.Params.contact_title_primary }}<span>{{ .Site.Params.contact_title_accent }}</span></h2>
+            <p>{{ .Site.Params.contact_desc }}</p>
+            <ul class="contact-info">
+                <li>📍 {{ .Site.Params.contact_info.address }}</li>
+                <li>📧 {{ .Site.Params.contact_info.email }}</li>
+                <li>📞 {{ .Site.Params.contact_info.phone }}</li>
+            </ul>
+        </div>
+        <div class="contact-form-wrapper glass-card">
+            <form class="contact-form" action="{{ .Site.Params.formspree_endpoint }}" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="_replyto" required placeholder="your.email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">How can I help?</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="Details about current subjects, grades, or specific struggles..."></textarea>
+                </div>
+                <input type="hidden" name="_subject" value="New Lead from LI Mathematics!" />
+                <button type="submit" class="btn-primary btn-block">Submit Inquiry</button>
+                <p class="form-disclaimer">We'll get back to you within 24 hours.</p>
+            </form>
+        </div>
+    </div>
+</section>
+{{ end }}

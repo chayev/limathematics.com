@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="Private tutoring for High School Mathematics by Mykola in Holtsville, NY. Specializing in Algebra, Geometry, and Trigonometry.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}">
+    
+    <!-- Local SEO Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "LI Mathematics",
+      "url": "{{ .Site.BaseURL }}",
+      "telephone": "{{ .Site.Params.contact_info.phone }}",
+      "email": "{{ .Site.Params.contact_info.email }}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "133 Washington Ave",
+        "addressLocality": "Holtsville",
+        "addressRegion": "NY",
+        "postalCode": "11742"
+      },
+      "description": "Private tutoring for High School Mathematics in Holtsville, NY."
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">LI <span>Mathematics</span></a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="nav-links" id="nav-links">
+                <a href="/#subjects">Subjects</a>
+                <a href="/#testimonials">Testimonials</a>
+                <a href="/post/">Blog</a>
+                <a href="/#contact" class="btn-primary-sm">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="site-content">
+        <div class="bg-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
+        
+        <main>
+            {{ block "main" . }}{{ end }}
+        </main>
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; {{ now.Format "2006" }} LI Mathematics. All rights reserved.</p>
+                <p>{{ .Site.Params.contact_info.address }} | {{ .Site.Params.contact_info.phone }} | {{ .Site.Params.contact_info.email }}</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
